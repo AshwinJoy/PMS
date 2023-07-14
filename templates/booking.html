@@ -25,11 +25,32 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Source Airport</label>
-                <input type="text" class="form-control" name="source_airport" required>
+<!--                 <input type="text" class="form-control" name="source_airport" required> -->
+            
+                <input list="airports" name="source_airport" class="form-control" required>
+                  <datalist id="airports">
+                    <option value="Kochi">
+                    <option value="Goa">
+                    <option value="Bangalore">
+                    <option value="Chennai">
+                    <option value="Hyderabad">
+                    <option value="Mumbai">
+                    <option value="Ahmedabad">
+                    <option value="Lucknow">
+                    <option value="Indore">
+                    <option value="Delhi">
+                    <option value="Jaipur">
+                    <option value="Kolkata">
+                    <option value="Agartala">
+                    <option value="Calicut">
+                    <option value="Trivandrum">
+                  </datalist>
+                
             </div>
             <div class="mb-3">
                 <label class="form-label">Destination Airport</label>
-                <input type="text" class="form-control" name="destination_airport" required>
+<!--                 <input type="text" class="form-control" name="destination_airport" required> -->
+                <input list="airports" name="destination_airport" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Ticket Status</label>
