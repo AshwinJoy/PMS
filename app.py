@@ -103,6 +103,6 @@ def view_tickets():
         return render_template('viewtickets.html', tickets_data=tickets_data, passenger_id=passenger_id)
 
 if __name__ == "__main__":
-    #app.run() 
+    app.run() 
     #use just app.run() if running locally and comment below line and uncomment above line. Below line is for making the app work on zeet
-    app.run(debug=False, host='0.0.0.0')
+    #app.run(debug=False, host='0.0.0.0')
