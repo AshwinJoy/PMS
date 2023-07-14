@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Airlines | View Tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+
+    <center><a href="" style="text-decoration: none;"><span style="color: red;font-size:90px;">ABC</span><span style="color: lightskyblue; font-size: 60px;">Airlines</span></a></center>
+
+    <br><br>
+    <center>
+    <div class="card aligncenter" style="width: 70%;">
+        <h5 class="card-header">Welcome to ABC Airlines</h5>
+        <div class="card-body">
+            <h5 class="card-title">Passenger id: {{passenger_id}}</h5>
+            <p class="card-text">Experience safety and comfort with ABC.</p>
+            <a href="{{url_for('view_tickets',passenger_id=passenger_id)}}" class="previous"> View Tickets</a>
+            <a href="{{url_for('bookticket',passenger_id=passenger_id)}}" class="next">Book Tickets </a>
+        </div>
+        <a href="{{url_for('index')}}">Log Out</a>
+      </div>
+    </center>
+</body>
+</html>

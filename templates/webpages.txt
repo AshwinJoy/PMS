@@ -1,0 +1,6 @@
+Login/Register Page
+Register Confirmation
+Home Page (Book Ticket, View Tickets)
+Book Ticket
+Booking Confirmation
+View Tickets

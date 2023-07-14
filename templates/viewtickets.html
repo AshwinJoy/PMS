@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Airlines | View Tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+
+    <center><a href="{{url_for('home', passenger_id=passenger_id)}}" style="text-decoration: none;"><span style="color: red;font-size:90px;">ABC</span><span style="color: lightskyblue; font-size: 60px;">Airlines</span></a></center>
+
+    <br><br>
+    <center>
+    <div class="card aligncenter" style="width: 70%;">
+        <h5 class="card-header">Ticket History - {{ passenger_id }}</h5>
+        <div class="card-body">
+          
+            <table class="table table-hover" id="bookings_table">
+                <thead>
+                  <tr>
+                    <th scope="col">Sl.No.</th>
+                    <th scope="col">PNR Number</th>
+                    <th scope="col">Travel Date</th>
+                    <th scope="col">Source Airport</th>
+                    <th scope="col">Destination Airport</th>
+                    <th scope="col">Seat Preference</th>
+                    <th scope="col">Meal Preference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% set count = 0 %}
+                  {% for ticket in tickets_data %}
+                  <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ ticket[0] }}</td>
+                    <td>{{ ticket[2] }}</td>
+                    <td>{{ ticket[3] }}</td>
+                    <td>{{ ticket[4] }}</td>
+                    {% if ticket[6]==1 %}
+                      <td>{{ 'Aisle' }}</td>
+                    {% elif ticket[6]==2 %}
+                      <td>{{ 'Middle' }}</td>
+                    {% else %}
+                      <td>{{ 'Window' }}</td>
+                    {% endif %}
+
+                    {% if ticket[7]==1 %}
+                      <td>{{ 'Veg' }}</td>
+                    {% else %}
+                      <td>{{ 'Non Veg' }}</td>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+
+              </table>
+
+              <br> <br> <br>
+
+        </div>
+      </div>
+    </center>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  new DataTable('#bookings_table', {  lengthMenu: 
+        [5, 10, 15]
+    });
+
+</script>
+</body>
+</html>

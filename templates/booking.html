@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Airlines | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <center><a href="{{url_for('home', passenger_id=passenger_id)}}" style="text-decoration: none;"><span style="color: red;font-size:90px;">ABC</span><span style="color: lightskyblue; font-size: 60px;">Airlines</span></a></center>
+    <br> <br> <br>
+    <center>
+    <div class="card aligncenter" style="width: 60%;">
+    <h5 class="card-header">Book Ticket</h5>
+    <div class="card-body">
+        <form id="bookingform" method="post" action="{{url_for('bookticketcheck',passenger_id=passenger_id)}}">
+            <div class="mb-3">
+                <label class="form-label">PNR Number</label>
+                <input type="text" class="form-control" name="pnr_number" id="pnr_number_default" readonly>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Travel Date</label>
+                <input type="date" class="form-control" name="travel_date" style="text-align: center;" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Source Airport</label>
+                <input type="text" class="form-control" name="source_airport" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Destination Airport</label>
+                <input type="text" class="form-control" name="destination_airport" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ticket Status</label>
+                <select class="form-select" style="text-align: center;" name="ticket_status" required>
+                    <option value="1">New</option>
+                    <option value="2">Hold</option>
+                    <option value="3">Confirmed</option>
+                    </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Seat Preference</label>
+                <select class="form-select" style="text-align: center;" name="seat_preference" required>
+                    <option value="1">Aisle</option>
+                    <option value="2">Middle</option>
+                    <option value="3">Window</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Meal Preference</label>
+                <select class="form-select" style="text-align: center;" name="meal_preference" required>
+                    <option value="1">Veg</option>
+                    <option value="2">Non Veg</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary buttonstyle">Submit</button>
+        </form>
+    </div>
+    </div>
+    </center>
+
+    
+
+    <script>
+        const d = new Date();
+        let ms = d.valueOf();
+
+        document.getElementById('pnr_number_default').value = 'ABC' + Math.floor(ms/100);
+      
+      </script>
+
+
+
+
+</body>
+</html>

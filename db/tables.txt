@@ -1,0 +1,40 @@
+Passengers
+----------
+Passenger Id
+Name
+Email
+Password
+Address
+Phone
+
+Bookings
+-------------
+PNRnumber
+PassengerId
+Travel date
+Source
+Destination
+Status
+Seat Preference
+Meal Preference
+
+
+Booking Status
+----------------
+1, New
+2, Hold
+3, Confirmed
+
+Seat Preference
+----------------
+1, Aisle
+2, Middle
+3, Window
+
+Meal Preference
+----------------
+1, Veg
+2, Non Veg
+
+
+PNR NO | Travel Date  |  Source | Destination | Seat Preference |  Meal Preference | Passenger Name | Email | Phone

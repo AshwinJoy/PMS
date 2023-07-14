@@ -1,0 +1,44 @@
+.aligncenter{
+    text-align: center;
+}
+
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: red;
+    color: white;
+  }
+
+  .buttonstyle{
+        background-color: red;
+        color: white;
+        border-color: white;
+    }
+    .buttonstyle:hover{
+        background-color: rgb(240, 54, 21);
+        border-color: white;
+    }
+
+.error-text{
+  color: red;
+}
+
+#logincard, #regcard{
+  width: 55%;
+  text-align: center;
+}
